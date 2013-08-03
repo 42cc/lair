@@ -13,8 +13,8 @@ TEMPLATE_ROOT = os.path.join(ROOT, 'templates')
 STATIC_ROOT = os.path.join(ROOT, 'static')
 STATIC_PATH = '/static/'
 
-define("port", default=8000, help="run on the given port", type=int)
-define("debug", default=1, help="run in debug mode", type=int)
+define("port", default=9001, help="run on the given port", type=int)
+define("debug", default=0, help="run in debug mode", type=int)
 
 
 def render_template(template, **context):
@@ -34,11 +34,13 @@ class MainHandler(tornado.web.RequestHandler):
         self.write(content)
 
 
+application = tornado.web.Application([
+    (r"/", MainHandler),
+], debug=options.debug, static_path=STATIC_ROOT)
+
+
 def main():
     parse_command_line()
-    application = tornado.web.Application([
-        (r"/", MainHandler),
-    ], debug=options.debug, static_path=STATIC_ROOT)
     application.listen(options.port)
     tornado.ioloop.IOLoop.instance().start()
 
