@@ -1,15 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-
-  <title>Lair</title>
+    <title>{{ title }} | {{ site_name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    {% block css %}
+        <link rel="stylesheet" href="/static/css/lib/bootstrap.css" type="text/css" media="screen, projection">
+        <link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+    {% endblock %}
 </head>
-
 <body>
-
-<div id="content">
-  <p>Why, hello there!</p>
-</div>
-
-</body>
+    <div id="wrapper">
+        <div class="container">
+            <div class="navbar">
+                <a href="/" class="navbar-brand">{{ site_name }}</a>
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+    <div id="footer">
+        <div class="container"><p>Geronimo!</p></div>
+    </div>
+    {% block js %}
+        <script type="text/javascript" src="/static/js/lib/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+    {% endblock %}
+  </body>
 </html>

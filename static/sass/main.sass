@@ -1,0 +1,28 @@
+// Height of the footer
+$footer: 43px
+$neg_footer: -43px
+
+html, body
+    height: 100%
+
+body
+    background: #F6F6F6
+
+#wrapper
+    min-height: 100%
+    height: auto !important
+    height: 100%
+    margin: 0 auto $neg_footer
+
+#push
+    height: $footer
+
+#footer
+    clear: both
+
+    &>div
+        text-align: center
+
+.spinning
+    background: url('../img/spinning.gif') left no-repeat
+    padding-left: 20px

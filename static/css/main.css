@@ -1,0 +1,30 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #f6f6f6;
+}
+
+#wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -43px;
+}
+
+#push {
+  height: 43px;
+}
+
+#footer {
+  clear: both;
+}
+#footer > div {
+  text-align: center;
+}
+
+.spinning {
+  background: url("../img/spinning.gif") left no-repeat;
+  padding-left: 20px;
+}
