@@ -3,11 +3,16 @@ import os
 
 import tornado.ioloop
 import tornado.web
+from tornado.options import define, options, parse_command_line
 from jinja2 import Environment, FileSystemLoader
 
 
 ROOT = os.path.dirname(__file__)
 TEMPLATE_ROOT = os.path.join(ROOT, 'templates')
+STATIC_PATH = os.path.join(ROOT, 'static')
+
+define("port", default=8000, help="run on the given port", type=int)
+define("debug", default=1, help="run in debug mode", type=int)
 
 
 def render_template(template, **context):
@@ -23,11 +28,14 @@ class MainHandler(tornado.web.RequestHandler):
         self.write(content)
 
 
-application = tornado.web.Application([
-    (r"/", MainHandler),
-])
+def main():
+    parse_command_line()
+    application = tornado.web.Application([
+        (r"/", MainHandler),
+    ], debug=options.debug, static_path=STATIC_PATH)
+    application.listen(options.port)
+    tornado.ioloop.IOLoop.instance().start()
 
 
 if __name__ == "__main__":
-    application.listen(8888)
-    tornado.ioloop.IOLoop.instance().start()
+    main()
