@@ -16,7 +16,6 @@ STATIC_PATH = '/static/'
 define("port", default=9001, help="run on the given port", type=int)
 define("debug", default=0, help="run in debug mode", type=int)
 
-
 def render_template(template, **context):
     loader = FileSystemLoader(TEMPLATE_ROOT)
     env = Environment(loader=loader)
