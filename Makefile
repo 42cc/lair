@@ -1,6 +1,6 @@
 sass:
-	sass --watch -t expanded static/sass:static/css
+	sass --watch -t expanded lair/web/static/sass:lair/web/static/css
 run:
-	./main.py --debug=1 --port=8000
+	./lair/web/main.py --debug=1 --port=8000
 test:
-	nosetests tests.py
+	nosetests
