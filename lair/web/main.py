@@ -37,7 +37,7 @@ def render_template(template, **context):
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        content = render_template('index.html')
+        content = render_template('index.html', title="Buzz")
         self.write(content)
 
 

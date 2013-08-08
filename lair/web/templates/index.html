@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 
+{% block js %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ STATIC_PATH }}js/tweets.js"></script>
+{% endblock js %}
+
 {% block content %}
-    Hello!
+    <div ng-app>
+    {% raw %}
+        <div ng-controller="TweetListCtrl">
+            <div class="tweet" ng-repeat="tweet in tweets">
+                <img src="{{ tweet.user.profile_image_url }}" class="tweet-image">
+                <div class="tweet-name"><a href="http://twitter.com/{{ tweet.user.screen_name}}">{{ tweet.user.name }}</a></div>
+                <div class="tweet-text">{{ tweet.text }}</div><div class="tweet-time"><a href="http://twitter.com/{{ tweet.user.screen_name}}/status/{{ tweet.id }}"></a></div>
+
+            </div>
+        </div>
+    {% endraw %}
+    </div>
 {% endblock content %}

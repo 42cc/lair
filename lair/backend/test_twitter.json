@@ -631,6 +631,104 @@
         "coordinates": null,
         "created_at": "Wed Aug 07 20:56:58 +0000 2013",
         "text": "RT @ESL_Shawn: On another note: The whole top 8 of last season has been eliminated in Ro32 or Ro16 this season... #WTF #WCS"
+    },
+    {
+        "contributors": null,
+        "truncated": false,
+        "text": "2h30m from now the 6th and final @ESETUKMasters Qualifier begins - who will make the top 8? SIGN UP HERE! http://t.co/J5GcSHcTwX #UKeSports",
+        "in_reply_to_status_id": null,
+        "id": 365494016676073472,
+        "source": "web",
+        "retweeted": false,
+        "coordinates": null,
+        "entities": {
+            "user_mentions": [
+                {
+                    "indices": [
+                        33,
+                        47
+                    ],
+                    "screen_name": "ESETUKMasters",
+                    "id": 862811275,
+                    "name": "ESET UK Masters",
+                    "id_str": "862811275"
+                }
+            ],
+            "hashtags": [
+                {
+                    "indices": [
+                        129,
+                        139
+                    ],
+                    "text": "UKeSports"
+                }
+            ],
+            "urls": [
+                {
+                    "url": "http://t.co/J5GcSHcTwX",
+                    "indices": [
+                        106,
+                        128
+                    ],
+                    "expanded_url": "http://www.esetukmasters.com",
+                    "display_url": "esetukmasters.com"
+                }
+            ]
+        },
+        "in_reply_to_screen_name": null,
+        "id_str": "365494016676073472",
+        "retweet_count": 0,
+        "in_reply_to_user_id": null,
+        "favorited": false,
+        "user": {
+            "follow_request_sent": null,
+            "profile_use_background_image": true,
+            "id": 375257073,
+            "verified": false,
+            "profile_image_url_https": "https://si0.twimg.com/profile_images/378800000002171243/dd647e1b3ec6428ca2b8e78629825c1e_normal.jpeg",
+            "profile_sidebar_fill_color": "EFEFEF",
+            "is_translator": false,
+            "geo_enabled": false,
+            "profile_text_color": "333333",
+            "followers_count": 2179,
+            "protected": false,
+            "location": "London, UK",
+            "default_profile_image": false,
+            "id_str": "375257073",
+            "utc_offset": 28800,
+            "statuses_count": 11903,
+            "description": "International eSports Commentator - Australian-Chinese, London based.",
+            "friends_count": 96,
+            "profile_link_color": "009999",
+            "profile_image_url": "http://a0.twimg.com/profile_images/378800000002171243/dd647e1b3ec6428ca2b8e78629825c1e_normal.jpeg",
+            "notifications": null,
+            "profile_background_image_url_https": "https://si0.twimg.com/images/themes/theme14/bg.gif",
+            "profile_background_color": "131516",
+            "profile_banner_url": "https://pbs.twimg.com/profile_banners/375257073/1367794893",
+            "profile_background_image_url": "http://a0.twimg.com/images/themes/theme14/bg.gif",
+            "screen_name": "JoRoSaR",
+            "lang": "en",
+            "profile_background_tile": true,
+            "favourites_count": 1,
+            "name": "John Sargent",
+            "url": "http://www.jorosar.com",
+            "created_at": "Sat Sep 17 20:01:40 +0000 2011",
+            "contributors_enabled": false,
+            "time_zone": "Beijing",
+            "profile_sidebar_border_color": "EEEEEE",
+            "default_profile": false,
+            "following": null,
+            "listed_count": 39
+        },
+        "geo": null,
+        "in_reply_to_user_id_str": null,
+        "possibly_sensitive": false,
+        "lang": "en",
+        "created_at": "Thu Aug 08 15:25:38 +0000 2013",
+        "filter_level": "medium",
+        "in_reply_to_status_id_str": null,
+        "place": null,
+        "_id": 365494016676073472
     }
 ]
 
