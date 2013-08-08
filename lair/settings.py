@@ -1,3 +1,5 @@
+import os
+
 TWITTER = {
     "consumer_key": "9faVWayhQ0j7crE9cbitQ",
     "consumer_secret": "0N8d9mNa7XWcA1TwouQg3OgPOgahUoDCC0FzhDyQ",
@@ -7,3 +9,8 @@ TWITTER = {
 
 MONGO_CONNECTION = {}
 MONGO_DB = 'lair'
+
+TESTING = os.environ.get('TESTING', '')
+
+if TESTING:
+    MONGO_DB = 'lair_test'
