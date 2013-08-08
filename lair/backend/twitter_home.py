@@ -20,8 +20,10 @@ def main():
     mongo = MongoClient(**MONGO_CONNECTION)
     stream = get_twitter_stream()
     db = mongo[MONGO_DB]
-    next(stream)
     for tweet in stream:
+        if "id" not in tweet:
+            continue
+        tweet["_id"] = tweet["id"]
         db.twitter_home.insert(tweet)
 
 
