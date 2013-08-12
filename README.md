@@ -2,6 +2,6 @@ lair
 ====
 
 
-== init
+## init
 
-Required node packages: karma, jasmine-node
+Required node.js packages: karma, jasmine-node
