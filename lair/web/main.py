@@ -11,7 +11,7 @@ import motor
 from lair.settings import MONGO_CONNECTION, MONGO_DB
 
 
-SITE_NAME = 'Lair'
+SITE_NAME = 'Lost Temple'
 ROOT = os.path.dirname(__file__)
 TEMPLATE_ROOT = os.path.join(ROOT, 'templates')
 STATIC_ROOT = os.path.join(ROOT, 'static')
