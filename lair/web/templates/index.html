@@ -6,14 +6,13 @@
 {% endblock js %}
 
 {% block content %}
-    <div ng-app>
+    <div ng-app="LairApp">
     {% raw %}
         <div ng-controller="TweetListCtrl">
             <div class="tweet" ng-repeat="tweet in tweets">
                 <img ng-src="{{ tweet.user.profile_image_url }}" class="tweet-image">
                 <div class="tweet-name"><a href="http://twitter.com/{{ tweet.user.screen_name}}">{{ tweet.user.name }}</a></div>
-                <div class="tweet-text">{{ tweet.text }}</div><div class="tweet-time"><a href="http://twitter.com/{{ tweet.user.screen_name}}/status/{{ tweet.id }}"></a></div>
-
+                <div class="tweet-text">{{ tweet.text }}</div><div class="tweet-time"><a href="http://twitter.com/{{ tweet.user.screen_name}}/status/{{ tweet.id_str }}"></a></div>
             </div>
         </div>
     {% endraw %}

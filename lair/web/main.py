@@ -45,9 +45,9 @@ class TweetsHandler(tornado.web.RequestHandler):
     @tornado.web.asynchronous
     def get(self):
         collection = self.get_argument('collection', 'twitter_home')
-        last_id = self.get_argument('last_id', '')
+        last_id = self.get_argument('last_id', 'all')
         filters = {}
-        if (last_id):
+        if (last_id and last_id != 'all'):
             filters['_id'] = {"$gt": int(last_id)}
         data = db[collection].find(filters).sort([('_id', -1)])
         if (not last_id):
