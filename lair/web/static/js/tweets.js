@@ -9,8 +9,17 @@ angular.module('TweetServices', ['ngResource'])
         });
     });
 
-function TweetListCtrl($scope, $http, Tweets) {
-    $scope.tweets = Tweets.query();
-}
+function TweetListCtrl($scope, $http, $timeout, Tweets) {
+    $scope.tweets = [];
+    var last_id = 'all';
 
-// TweetListCtrl.$inject = ['$scope', '$http', 'Tweets']
+    (function tick(){
+        Tweets.query({last_id: last_id}, function(data){
+            $scope.tweets = data.concat($scope.tweets);
+            if (data.length > 0) {
+                last_id = data[0].id_str;
+            }
+            $timeout(tick, 5000);
+        });
+    })()
+}
