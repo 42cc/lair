@@ -16,6 +16,7 @@ if TESTING:
     MONGO_DB = 'lair_test'
 
 try:
-    from settings_local import *
+    from .settings_local import *
 except ImportError:
+    print('local settings not found')
     pass
