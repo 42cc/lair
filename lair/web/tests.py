@@ -2,6 +2,7 @@ import json
 
 from pymongo import MongoClient
 from tornado.testing import AsyncHTTPTestCase
+import tornado.ioloop
 
 from .main import application, SITE_NAME
 from lair.settings import MONGO_CONNECTION, MONGO_DB
@@ -20,6 +21,9 @@ class HelloWorldTestCase(AsyncHTTPTestCase):
 class TweetsTestCase(AsyncHTTPTestCase):
     def get_app(self):
         return application
+
+    def get_new_ioloop(self):
+        return tornado.ioloop.IOLoop.instance()
 
     def test_tweets_default(self):
         mongo = MongoClient(**MONGO_CONNECTION)

@@ -6,7 +6,7 @@ import tornado.ioloop
 import tornado.web
 from tornado.options import define, options, parse_command_line
 from jinja2 import Environment, FileSystemLoader
-from pymongo import MongoClient
+import motor
 
 from lair.settings import MONGO_CONNECTION, MONGO_DB
 
@@ -20,7 +20,7 @@ STATIC_PATH = '/static/'
 define("port", default=9001, help="run on the given port", type=int)
 define("debug", default=0, help="run in debug mode", type=int)
 
-mongo = MongoClient(**MONGO_CONNECTION)
+mongo = motor.MotorClient(**MONGO_CONNECTION).open_sync()
 db = mongo[MONGO_DB]
 
 
@@ -42,6 +42,7 @@ class MainHandler(tornado.web.RequestHandler):
 
 
 class TweetsHandler(tornado.web.RequestHandler):
+    @tornado.web.asynchronous
     def get(self):
         collection = self.get_argument('collection', 'twitter_home')
         last_id = self.get_argument('last_id', '')
@@ -49,11 +50,16 @@ class TweetsHandler(tornado.web.RequestHandler):
         if (last_id):
             filters['_id'] = {"$gt": int(last_id)}
         data = db[collection].find(filters).sort([('_id', -1)])
-        if (last_id):
-            data = list(data)
-        else:
-            data = list(data[:20])
-        self.write(json.dumps(data))
+        if (not last_id):
+            data = data.limit(20)
+        data.to_list(100, self._got_data)
+
+    def _got_data(self, data, error):
+        if error:
+            raise tornado.web.HTTPError(500, error)
+        elif data:
+            self.write(json.dumps(data))
+        self.finish()
 
 
 application = tornado.web.Application([
