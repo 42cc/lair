@@ -1,10 +1,10 @@
 import os
 
-TWITTER = {
-    "consumer_key": "9faVWayhQ0j7crE9cbitQ",
-    "consumer_secret": "0N8d9mNa7XWcA1TwouQg3OgPOgahUoDCC0FzhDyQ",
-    "token": "1642436946-jQqFteQ8ru76Wvymt0mcmsn722TniecrIX1s4BC",
-    "token_secret": "ltFk8tViFP7j9NHEqEt2NcT7Zguni49DWPmgAMhFI",
+TWITTER = {  # You need to set up twitter API keys in settings_loca.py
+    "consumer_key": None,
+    "consumer_secret": None,
+    "token": None,
+    "token_secret": None,
 }
 
 MONGO_CONNECTION = {}
@@ -14,3 +14,8 @@ TESTING = os.environ.get('TESTING', '')
 
 if TESTING:
     MONGO_DB = 'lair_test'
+
+try:
+    from settings_local import *
+except ImportError:
+    pass

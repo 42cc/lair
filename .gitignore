@@ -32,3 +32,6 @@ nosetests.xml
 .project
 .pydevproject
 .sass-cache
+
+# local settings
+settings_local.py
