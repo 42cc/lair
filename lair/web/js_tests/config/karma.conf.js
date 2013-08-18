@@ -4,6 +4,7 @@ files = [
     JASMINE,
     JASMINE_ADAPTER,
     'static/js/lib/angular.js',
+    'static/js/lib/angular-*.js',
     'js_tests/lib/angular-mocks.js',
     'static/js/*.js',
     'js_tests/unit/**/*.js'

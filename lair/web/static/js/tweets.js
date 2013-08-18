@@ -11,15 +11,16 @@ angular.module('TweetServices', ['ngResource'])
 
 function TweetListCtrl($scope, $http, $timeout, Tweets) {
     $scope.tweets = [];
-    var last_id = 'all';
+    $scope.last_id = 'all';
 
-    (function tick(){
-        Tweets.query({last_id: last_id}, function(data){
+    this.tick = function tick(){
+        Tweets.query({last_id: $scope.last_id}, function(data){
             $scope.tweets = data.concat($scope.tweets);
             if (data.length > 0) {
-                last_id = data[0].id_str;
+                $scope.last_id = data[0].id_str;
             }
             $timeout(tick, 5000);
         });
-    })()
+    };
+    this.tick();
 }
