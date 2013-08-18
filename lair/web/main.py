@@ -8,7 +8,7 @@ from tornado.options import define, options, parse_command_line
 from jinja2 import Environment, FileSystemLoader
 import motor
 
-from lair.settings import MONGO_CONNECTION, MONGO_DB
+from ..settings import MONGO_CONNECTION, MONGO_DB
 
 
 SITE_NAME = 'Lost Temple'

@@ -5,6 +5,6 @@ test:
 test_js:
 	karma start lair/web/js_tests/config/karma.conf.js
 run:
-	PYTHONPATH=$(CURDIR) ./lair/web/main.py --debug=1 --port=8000
+	python -m lair.web.main --debug=1 --port=8000
 twitter_home:
-	PYTHONPATH=$(CURDIR) ./lair/backend/twitter_home.py
+	python -m lair.backend.twitter_home

@@ -4,7 +4,7 @@ from twitter import TwitterStream, OAuth
 from pymongo import MongoClient
 
 
-from lair.settings import TWITTER, MONGO_CONNECTION, MONGO_DB
+from ..settings import TWITTER, MONGO_CONNECTION, MONGO_DB
 
 
 def get_twitter_stream():
