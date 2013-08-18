@@ -1,6 +1,6 @@
 import os
 
-TWITTER = {  # You need to set up twitter API keys in settings_loca.py
+TWITTER = {  # You need to set up twitter API keys in settings_local.py
     "consumer_key": None,
     "consumer_secret": None,
     "token": None,
